@@ -62,7 +62,7 @@ User Uploads Image ➡️ Node.js Server ➡️ Python Script (Identifies "Tomat
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/agrilearn.git
+git clone https://github.com/Keerthan-28/Design-Project.git
 cd agrilearn
 ```
 
