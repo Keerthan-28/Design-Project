@@ -216,46 +216,249 @@ export const cropModules: Module[] = [
         soilType: 'Humus rich',
         waterRequirements: 'Regular',
         harvestTime: 'All season'
-    }];
-
-export const urbanModules = [
+    },
     {
-        id: 'hydroponics-101',
+        id: 'hydroponics',
+        title: 'Hydroponics',
+        category: 'short-term',
+        duration: '45-60 Days',
+        difficulty: 'Intermediate',
+        description: 'Soil-less farming for apartments. Save 90% water and grow fresh greens year-round.',
+        image: '/images/tech_hydroponics_1770352803412.png',
+        scientificName: 'Soil-less Culture',
+        soilType: 'Inert Media (Coco peat)',
+        waterRequirements: 'Recirculating',
+        harvestTime: 'Cycle dependent'
+    },
+    {
+        id: 'aeroponics',
+        title: 'Aeroponics',
+        category: 'short-term',
+        duration: '30-50 Days',
+        difficulty: 'Advanced',
+        description: 'Mist-based nutrition for rapid growth and maximum oxygen to roots.',
+        image: '/images/tech_aeroponics_1770352820128.png',
+        scientificName: 'Air Culture',
+        soilType: 'None (Mist)',
+        waterRequirements: 'Low (Misting)',
+        harvestTime: 'Cycle dependent'
+    },
+    {
+        id: 'mushroom',
+        title: 'Mushroom Cultivation',
+        category: 'short-term',
+        duration: '30-45 Days',
+        difficulty: 'Intermediate',
+        description: 'Profit from dark spaces. High-yield indoor farming of Oyster and Button mushrooms.',
+        image: '/images/crop_mushroom.png',
+        scientificName: 'Pleurotus / Agaricus',
+        soilType: 'Sterilized Substrate',
+        waterRequirements: 'High Humidity',
+        harvestTime: 'Flush dependent'
+    },
+    {
+        id: 'microgreens',
+        title: 'Microgreens',
+        category: 'short-term',
+        duration: '7-14 Days',
+        difficulty: 'Beginner',
+        description: 'Superfoods in a week. Grow nutrient-dense tiny greens on your windowsill.',
+        image: '/images/crop_microgreens.jpg', // Placeholder suffix
+        scientificName: 'Young Greens',
+        soilType: 'Coco peat / Mat',
+        waterRequirements: 'Light Mist',
+        harvestTime: '1-2 Weeks'
+    },
+    {
+        id: 'vertical-garden',
+        title: 'Vertical Gardening',
+        category: 'long-term',
+        duration: 'Continuous',
+        difficulty: 'Beginner',
+        description: 'Maximize small spaces by growing upwards. Ideal for balconies and innovative walls.',
+        image: '/images/tech_vertical.jpg', // Placeholder suffix
+        scientificName: 'Vertical Culture',
+        soilType: 'Potting Mix',
+        waterRequirements: 'Drip System',
+        harvestTime: 'Continuous'
+    },
+    {
+        id: 'container-garden',
+        title: 'Container Gardening',
+        category: 'mid-term',
+        duration: 'Seasonal',
+        difficulty: 'Beginner',
+        description: 'Grow vegetables and herbs in pots. Perfect for rooftops and patios.',
+        image: '/images/tech_container.jpg', // Placeholder suffix
+        scientificName: 'Pot Culture',
+        soilType: 'Potting Mix',
+        waterRequirements: 'Manual',
+        harvestTime: 'Seasonal'
+    },
+
+    // NEW URBAN FARMING
+    {
+        id: 'terrace-kitchen',
+        title: 'Terrace Kitchen Garden',
+        category: 'short-term',
+        duration: 'Continuous',
+        difficulty: 'Beginner',
+        description: 'Grow fresh herbs and vegetables on your rooftop or balcony all year round.',
+        image: '/images/crop_lettuce.jpg',
+        scientificName: 'Mixed Herbs & Greens',
+        soilType: 'Potting Mix',
+        waterRequirements: 'Regular',
+        harvestTime: 'Continuous'
+    },
+    {
+        id: 'aquaponics',
+        title: 'Aquaponics System',
+        category: 'mid-term',
+        duration: '60-90 Days',
+        difficulty: 'Advanced',
+        description: 'Combine fish farming with plant growing in a self-sustaining ecosystem.',
+        image: '/images/tech_hydroponics_1770352803412.png',
+        scientificName: 'Aqua-Plant Symbiosis',
+        soilType: 'None (Water)',
+        waterRequirements: 'Recirculating',
+        harvestTime: 'Cycle dependent'
+    },
+    {
+        id: 'container-fruit',
+        title: 'Container Fruit Farming',
+        category: 'long-term',
+        duration: '6-12 Months',
+        difficulty: 'Intermediate',
+        description: 'Grow dwarf fruit trees in pots — perfect for patios and balconies.',
+        image: '/images/crop_tomato.png',
+        scientificName: 'Dwarf Fruit Varieties',
+        soilType: 'Rich Potting Mix',
+        waterRequirements: 'Moderate',
+        harvestTime: 'Seasonal'
+    },
+    {
+        id: 'vertical-tower',
+        title: 'Vertical Tower Garden',
+        category: 'mid-term',
+        duration: 'Continuous',
+        difficulty: 'Intermediate',
+        description: 'Stack plants vertically using PVC towers to grow 50+ plants in 4 sq ft.',
+        image: '/images/tech_vertical.jpg',
+        scientificName: 'Vertical Culture',
+        soilType: 'Potting Mix / Hydroponics',
+        waterRequirements: 'Drip System',
+        harvestTime: 'Continuous'
+    },
+    {
+        id: 'rooftop-bees',
+        title: 'Rooftop Bee Keeping',
+        category: 'long-term',
+        duration: '12+ Months',
+        difficulty: 'Advanced',
+        description: 'Support pollination and harvest fresh honey from urban beehives.',
+        image: '/images/crop_ginger.png',
+        scientificName: 'Apis mellifera',
+        soilType: 'N/A',
+        waterRequirements: 'Minimal',
+        harvestTime: 'Summer'
+    }
+];
+
+
+export const urbanModuleIds = [
+    'hydroponics',
+    'aeroponics',
+    'mushroom',
+    'microgreens',
+    'vertical-garden',
+    'container-garden',
+    'terrace-kitchen',
+    'aquaponics',
+    'container-fruit',
+    'rooftop-bees',
+    'vertical-tower',
+];
+
+export interface UrbanModule {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    steps: string[];
+    pace: string;
+}
+
+export const urbanModules: UrbanModule[] = [
+    {
+        id: 'terrace-kitchen',
+        title: 'Terrace Kitchen Garden',
+        description: 'Grow fresh herbs and vegetables on your rooftop or balcony all year round.',
+        image: '/images/crop_lettuce.jpg',
+        steps: ['Plan your terrace layout and containers', 'Choose seasonal herbs and vegetables', 'Set up drip irrigation and soil mix', 'Maintain, harvest, and replant'],
+        pace: 'Self-paced'
+    },
+    {
+        id: 'aquaponics',
+        title: 'Aquaponics System',
+        description: 'Combine fish farming with plant growing in a self-sustaining ecosystem.',
+        image: '/images/tech_hydroponics_1770352803412.png',
+        steps: ['Understand aquaponics cycle — fish + plants', 'Build or buy a starter aquaponics kit', 'Stock fish and transplant seedlings', 'Monitor water quality and harvest'],
+        pace: 'Self-paced'
+    },
+    {
+        id: 'container-fruit',
+        title: 'Container Fruit Farming',
+        description: 'Grow dwarf fruit trees in pots — perfect for patios and balconies.',
+        image: '/images/crop_tomato.png',
+        steps: ['Select dwarf fruit varieties for containers', 'Prepare pots with proper drainage and soil', 'Fertilize and manage pollination', 'Prune, support branches, and harvest'],
+        pace: 'Self-paced'
+    },
+    {
+        id: 'microgreens',
+        title: 'Microgreens & Sprouts',
+        description: 'Harvest nutrient-dense greens in just 7-14 days from your kitchen counter.',
+        image: '/images/crop_microgreens.jpg',
+        steps: ['Choose seeds — sunflower, radish, pea shoots', 'Soak and spread seeds on growing medium', 'Maintain moisture and light for 7-14 days', 'Harvest at cotyledon stage and enjoy'],
+        pace: 'Self-paced'
+    },
+    {
+        id: 'vertical-tower',
+        title: 'Vertical Tower Garden',
+        description: 'Stack plants vertically using PVC towers to grow 50+ plants in 4 sq ft.',
+        image: '/images/tech_vertical.jpg',
+        steps: ['Design and build PVC tower frame', 'Install net cups and nutrient reservoir', 'Plant seedlings and set up water pump', 'Monitor growth and rotate crops'],
+        pace: 'Self-paced'
+    },
+    {
+        id: 'rooftop-bees',
+        title: 'Rooftop Bee Keeping',
+        description: 'Support pollination and harvest fresh honey from urban beehives.',
+        image: '/images/crop_ginger.png',
+        steps: ['Learn local beekeeping regulations', 'Set up hive boxes on your rooftop', 'Introduce a bee colony and feed', 'Inspect hives regularly and harvest honey'],
+        pace: 'Self-paced'
+    },
+    {
+        id: 'hydroponics',
         title: 'Hydroponics Mastery',
         description: 'Soil-less farming for apartments. Save 90% water.',
-        icon: 'water',
         image: '/images/tech_hydroponics_1770352803412.png',
-        steps: [
-            'Setup NFT (Nutrient Film Technique) channels.',
-            'Mix hydroponic nutrient solution A & B.',
-            'Maintain pH levels between 5.5 and 6.5.',
-            'Monitor EC (Electrical Conductivity) daily.'
-        ]
+        steps: ['Choose a hydroponic system type (DWC, NFT, Ebb & Flow)', 'Assemble reservoir, pumps, and grow trays', 'Mix nutrient solution and transplant seedlings', 'Monitor pH/EC levels and harvest'],
+        pace: 'Self-paced'
     },
     {
-        id: 'aeroponics-pro',
+        id: 'aeroponics',
         title: 'Aeroponics Professional',
         description: 'Mist-based nutrition for rapid growth and maximum oxygen.',
-        icon: 'wind',
         image: '/images/tech_aeroponics_1770352820128.png',
-        steps: [
-            'Install high-pressure misting nozzles.',
-            'Set timer for 5 sec mist / 5 min pause intervals.',
-            'Ensure roots hang freely in dark chamber.',
-            'Keep strict sterility to prevent root rot.'
-        ]
+        steps: ['Build an aeroponic chamber with misters', 'Install timer-controlled misting system', 'Plant cuttings in net pots', 'Adjust mist intervals and harvest'],
+        pace: 'Self-paced'
     },
     {
-        id: 'vertical-mushrooms',
+        id: 'mushroom',
         title: 'Vertical Mushroom Farming',
         description: 'High-yield fungi cultivation in dark, small spaces.',
-        icon: 'mushroom',
         image: '/images/crop_mushroom.png',
-        steps: [
-            'Prepare substrate (straw/sawdust) and sterilize.',
-            'Inoculate with mushroom spawn.',
-            'Maintain high humidity (85-95%) and low light.',
-            'Harvest flushes every few weeks.'
-        ]
+        steps: ['Prepare sterilized substrate (straw or sawdust)', 'Inoculate with mushroom spawn', 'Maintain humidity and darkness', 'Harvest flushes every 7-10 days'],
+        pace: 'Self-paced'
     }
 ];

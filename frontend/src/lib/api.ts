@@ -19,4 +19,20 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
+// Add a response interceptor to handle auth errors
+api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response && error.response.status === 401) {
+            // Token is invalid/expired
+            if (typeof window !== 'undefined') {
+                localStorage.removeItem('token');
+                // Optionally redirect to login, but for now just clear token
+                // to prevent infinite loops or broken states
+            }
+        }
+        return Promise.reject(error);
+    }
+);
+
 export default api;

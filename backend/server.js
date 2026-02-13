@@ -26,6 +26,7 @@ app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/webauthn', require('./routes/webAuthnRoutes'));
 app.use('/api/weather', require('./routes/weatherRoutes'));
 app.use('/api/ai', require('./routes/aiRoutes'));
+app.use('/api/disease', require('./routes/diseaseRoutes'));
 
 app.get('/', (req, res) => {
     res.send('API is running...');

@@ -3,32 +3,33 @@
 import { useEffect, useState } from 'react';
 import ModuleCard from '@/components/modules/ModuleCard';
 import { Module } from '@/data/modules';
-import { Button } from '@/components/ui/Button';
 import styles from './page.module.css';
+
+type FilterType = 'all' | 'short-term' | 'mid-term' | 'long-term';
+
+const filters: { label: string; value: FilterType }[] = [
+    { label: 'All', value: 'all' },
+    { label: 'Short Term', value: 'short-term' },
+    { label: 'Mid Term', value: 'mid-term' },
+    { label: 'Long Term', value: 'long-term' },
+];
 
 export default function ModulesPage() {
     const [modules, setModules] = useState<Module[]>([]);
     const [loading, setLoading] = useState(true);
     const [completedModules, setCompletedModules] = useState<string[]>([]);
+    const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
     useEffect(() => {
         async function fetchData() {
             try {
-                // Fetch modules
                 const modulesRes = await fetch('/api/modules');
                 const modulesData = await modulesRes.json();
                 setModules(modulesData);
 
-                // Fetch user progress if logged in
                 const token = localStorage.getItem('token');
                 if (token) {
                     try {
-                        // We need to use our api helper to attach the token, 
-                        // but since this is a server component turned client, 
-                        // we can just import api or use fetch with headers.
-                        // Let's use the api helper we have in lib/api.ts for consistency
-                        // But we can't import it easily inside useEffect without proper import top level
-                        // Actually we can just do fetch with bearer token here for simplicity
                         const progressRes = await fetch('http://localhost:5000/api/users/progress', {
                             headers: {
                                 'Authorization': `Bearer ${token}`
@@ -37,7 +38,6 @@ export default function ModulesPage() {
 
                         if (progressRes.ok) {
                             const progressData = await progressRes.json();
-                            // Filter for completed items
                             const completedIds = progressData
                                 .filter((p: any) => p.isCompleted)
                                 .map((p: any) => p.moduleId);
@@ -56,11 +56,27 @@ export default function ModulesPage() {
         fetchData();
     }, []);
 
+    const filteredModules = activeFilter === 'all'
+        ? modules
+        : modules.filter(m => m.category === activeFilter);
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
                 <h1 className={styles.title}>Learning Modules</h1>
                 <p className={styles.subtitle}>Select a crop type to begin your journey.</p>
+
+                <div className={styles.filters}>
+                    {filters.map((f) => (
+                        <button
+                            key={f.value}
+                            className={`${styles.filterBtn} ${activeFilter === f.value ? styles.filterActive : ''}`}
+                            onClick={() => setActiveFilter(f.value)}
+                        >
+                            {f.label}
+                        </button>
+                    ))}
+                </div>
             </header>
 
             {loading ? (
@@ -70,7 +86,7 @@ export default function ModulesPage() {
                 </div>
             ) : (
                 <div className={styles.grid}>
-                    {modules.map((module) => (
+                    {filteredModules.map((module) => (
                         <ModuleCard
                             key={module.id}
                             module={module}

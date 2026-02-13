@@ -44,3 +44,13 @@ Desktop.ini
 
 # Optional: Ignore VS Code settings if they are personal
 .vscode/settings.json
+
+# Python / ML
+__pycache__/
+*.pyc
+venv/
+backend/dataset/
+backend/models/*.keras
+backend/models/*.h5
+!backend/models/.gitkeep
+

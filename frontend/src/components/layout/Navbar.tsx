@@ -21,6 +21,7 @@ export default function Navbar() {
                     <Link href="/modules" className={styles.link}>Learning Modules</Link>
                     <Link href="/urban-farming" className={styles.link}>Urban Farming</Link>
                     <Link href="/multi-cropping" className={styles.link}>Multi-Cropping</Link>
+                    <Link href="/crop-disease" className={styles.link}>Crop Doctor</Link>
                     <Link href="/tools" className={styles.link}>Tools</Link>
                     <Link href="/community" className={styles.link}>Expert Session</Link>
                 </div>
