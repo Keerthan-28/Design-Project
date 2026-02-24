@@ -615,6 +615,62 @@ export const chilliSyllabus: ModuleStage[] = [
     { stage: 6, title: "Multiple Pickings", duration: "75+ Days", topics: [{ title: "Harvest", content: "Pick Green Chilli at 75 days. Red Chilli: Allow to dry on plant partially." }] }
 ];
 
+
+export const terraceSyllabus: ModuleStage[] = [
+    { stage: 1, title: "Site Analysis & Planning", duration: "1 Week", topics: [{ title: "Sunlight Mapping", content: "Most veggies need 6-8 hours sun. Map your terrace: South-facing is best. Use shaded areas for leafy greens." }, { title: "Load Bearing", content: "Place heavy pots near pillars/beams. Waterproof your roof before starting." }] },
+    { stage: 2, title: "Potting Mix Preparation", duration: "2-3 Days", topics: [{ title: "The Magic Mix", content: "Don't use garden soil (too heavy). Mix: **1 part Red Soil + 1 part Coco Peat + 1 part Vermicompost**. Add Neem Cake to prevent pests." }] },
+    { stage: 3, title: "Container Selection", duration: "1 Week", topics: [{ title: "Size Matters", content: "Leafy greens: 6 inch depth. Tomatoes/Chilli: 12 inch. Fruit trees: 20 inch drums. Ensure drainage holes are open." }] },
+    { stage: 4, title: "Sowing & Transplanting", duration: "Day 0", topics: [{ title: "Seeds vs Saplings", content: "Sow Radish/Greens directly. Transplant Tomato/Chilli saplings. Water gently after sowing." }] },
+    { stage: 5, title: "Care & Harvest", duration: "Ongoing", topics: [{ title: "Watering", content: "Check soil moisture with finger. Water only when top inch is dry. Harvest greens 'cut-and-come-again' style." }] }
+];
+
+export const hydroponicsSyllabus: ModuleStage[] = [
+    { stage: 1, title: "System Basics", duration: "1 Week", topics: [{ title: "NFT vs DWC", content: "**NFT (Nutrient Film Technique):** Water flows over roots (good for lettuce). **DWC (Deep Water Culture):** Roots float in water (good for beginners)." }] },
+    { stage: 2, title: "Water & Nutrients", duration: "Ongoing", topics: [{ title: "EC & pH", content: "Keep pH between 5.5 - 6.5. EC (Electrical Conductivity) should be 1.0-2.0 depending on stage." }] },
+    { stage: 3, title: "Germination", duration: "10 Days", topics: [{ title: "Media", content: "Use Oasis cubes or Coco coins. Keep moist in dark for 2 days, then move to light. Transplant when roots show." }] },
+    { stage: 4, title: "Transplanting", duration: "Day 0", topics: [{ title: "Net Pots", content: "Place seedling in net pot with clay pebbles (LECA). Ensure roots touch the nutrient solution." }] },
+    { stage: 5, title: "Maintenance", duration: "30-45 Days", topics: [{ title: "Monitoring", content: "Check pH daily. Change water every 2 weeks. Harvest when plants reach full size." }] }
+];
+
+export const microgreensSyllabus: ModuleStage[] = [
+    { stage: 1, title: "Prep & Sowing", duration: "Day 1", topics: [{ title: "Soaking", content: "Soak large seeds (Peas/Sunflower) for 8-12 hours. Small seeds (Mustard) don't need soaking." }, { title: "Sowing", content: "Spread seeds densely on moist coco peat tray. Press down gently." }] },
+    { stage: 2, title: "Blackout Period", duration: "Days 2-4", topics: [{ title: "Weighting", content: "Cover seeds with another tray and put a weight on top. Keep in dark. This forces strong root growth." }] },
+    { stage: 3, title: "Greening", duration: "Days 5-7", topics: [{ title: "Light Exposure", content: "Remove cover. Expose to indirect sunlight. Leaves turn green (photosynthesis). Water from bottom." }] },
+    { stage: 4, title: "Harvest", duration: "Day 7-10", topics: [{ title: "Cutting", content: "Cut with scissors just above the soil line when first true leaves appear. Eat fresh!" }] }
+];
+
+export const mushroomSyllabus: ModuleStage[] = [
+    { stage: 1, title: "Substrate Prep", duration: "1 Day", topics: [{ title: "Pasteurization", content: "Boil paddy straw or sawdust in water for 1 hour to kill contaminants. Drain excess water (65% moisture)." }] },
+    { stage: 2, title: "Spawning", duration: "Day 0", topics: [{ title: "Inoculation", content: "Mix Mushroom Spawn (seed) with cooled substrate in crop bags. Layering method is best." }] },
+    { stage: 3, title: "Incubation", duration: "15-20 Days", topics: [{ title: "Mycelium Run", content: "Keep bags in dark room (24-28°C). White mycelium will colonize the bag." }] },
+    { stage: 4, title: "Fruiting", duration: "10-15 Days", topics: [{ title: "Shock", content: "Slit plastic. Introduce fresh air and light. Spray water 3 times/day to maintain humidity." }] },
+    { stage: 5, title: "Harvest", duration: "Flush 1-3", topics: [{ title: "Picking", content: "Twist and pull mushrooms when cap edges are still curled down." }] }
+];
+
+export const verticalTowerSyllabus: ModuleStage[] = [
+    { stage: 1, title: "Setup", duration: "1 Week", topics: [{ title: "Structure", content: "Assemble PVC tower or buy a kit. Place reservoir at bottom with submersible pump." }] },
+    { stage: 2, title: "Planting", duration: "Day 0", topics: [{ title: "Variety", content: "Leafy greens on top, heavier veggies (like small tomatoes) at bottom. Use net cups." }] },
+    { stage: 3, title: "Flow & Nutrition", duration: "Ongoing", topics: [{ title: "Timer", content: "Set pump: 15 mins ON, 45 mins OFF. Maintain nutrient solution level." }] }
+];
+
+export const containerFruitSyllabus: ModuleStage[] = [
+    { stage: 1, title: "Selection", duration: "Week 1", topics: [{ title: "Dwarf Varieties", content: "Choose grafted dwarf Mango, Guava, or Lemon. They fruit early and stay small." }] },
+    { stage: 2, title: "Potting", duration: "Day 0", topics: [{ title: "Pot Size", content: "Start with 14-inch pot, repot to 20-inch later. Use heavy soil mix for stability." }] },
+    { stage: 3, title: "Care", duration: "Ongoing", topics: [{ title: "Pruning", content: "Prune regularly to maintain shape. Hand pollinate if bees are scarce." }] }
+];
+
+export const aquaponicsSyllabus: ModuleStage[] = [
+    { stage: 1, title: "The Cycle", duration: "Week 1", topics: [{ title: "Nitrogen Cycle", content: "Fish waste (Ammonia) -> Bacteria -> Nitrates -> Plants. Plants clean water for fish." }] },
+    { stage: 2, title: "Stocking", duration: "Week 2", topics: [{ title: "Fish & Plants", content: "Tilapia/Koi are hardy fish. Lettuce/Basil thrive in aquaponics beds." }] },
+    { stage: 3, title: "Balance", duration: "Ongoing", topics: [{ title: "Testing", content: "Test Ammonia, Nitrite, Nitrate weekly. Do not overfeed fish." }] }
+];
+
+export const rooftopBeesSyllabus: ModuleStage[] = [
+    { stage: 1, title: "Setup", duration: "Month 1", topics: [{ title: "Location", content: "Place hive away from direct path of people. Ensure water source nearby." }] },
+    { stage: 2, title: "Colony", duration: "Month 1", topics: [{ title: "Installation", content: "Buy a 'Nucleus' colony. Transfer frames to your hive box gently." }] },
+    { stage: 3, title: "Inspection", duration: "Weekly", topics: [{ title: "Queen Check", content: "Check for eggs (sign of queen). Look for stored honey and pollen." }] }
+];
+
 export const getModuleSyllabus = (id: string): ModuleStage[] => {
     const map: Record<string, ModuleStage[]> = {
         rice: riceSyllabus,
@@ -631,7 +687,18 @@ export const getModuleSyllabus = (id: string): ModuleStage[] => {
         tomato: tomatoSyllabus,
         turmeric: turmericSyllabus,
         ginger: gingerSyllabus,
-        chilli: chilliSyllabus
+        chilli: chilliSyllabus,
+        'terrace-kitchen': terraceSyllabus,
+        'hydroponics': hydroponicsSyllabus,
+        'microgreens': microgreensSyllabus,
+        'mushroom': mushroomSyllabus,
+        'vertical-tower': verticalTowerSyllabus,
+        'container-fruit': containerFruitSyllabus,
+        'aquaponics': aquaponicsSyllabus,
+        'rooftop-bees': rooftopBeesSyllabus,
+        'vertical-garden': verticalTowerSyllabus, // Alias
+        'container-garden': terraceSyllabus, // Alias
+        'aeroponics': hydroponicsSyllabus // Alias for now
     };
     return map[id] || [];
 };
