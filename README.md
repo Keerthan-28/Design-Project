@@ -1,119 +1,45 @@
-# 🌱 AgriLearn - The Future of Virtual Farming
+# 🌱 Virtual Farming Education Platform
 
-AgriLearn is a comprehensive virtual farming platform designed to empower farmers and agricultural enthusiasts with modern cultivation knowledge. It combines detailed learning modules, AI-driven yield analysis, and real-time weather data to promote sustainable and profitable farming practices.
+## Overview
+The Virtual Farming Education Platform is an integrated digital ecosystem designed to help beginners—students, aspiring agri-entrepreneurs, and individuals transitioning into agriculture—overcome the challenges of scattered information and a lack of structured guidance in modern farming. 
 
-![AgriLearn Banner](frontend/public/images/logo.png) *(Note: Placeholder path for logo if available)*
+It combines step-by-step, crop-wise learning modules covering cultivation stages from planning to harvest, with intelligent tools including crop disease detection using deep learning, crop recommendation features, and real-time weather and market data integration.
 
-## 🚀 Features
+## Key Features
+*   **Stage-Wise Learning Modules:** Step-by-step guidance covering every phase of cultivation from seed selection to harvest.
+*   **Hybrid AI Disease Detection:** Fast, accurate crop disease diagnosis and remedies powered by local image processing (EfficientNetB0) and cloud AI (Google Gemini).
+*   **AI Yield & Multi-Cropping Planner:** Intelligent tools to estimate land income and suggest companion planting strategies for maximum efficiency.
+*   **Real-Time Weather Dashboard:** Live local climate data integration via OpenWeatherMap to support timely, day-to-day farming decisions.
+*   **Secure Biometric Login:** Fast and passwordless authentication using WebAuthn (FaceID/Fingerprint) for enhanced user security.
 
-### 🔍 Crop Doctor (New!)
-- **AI Disease Detection**: Snap a photo of your crop, and our Hybrid AI (TensorFlow + Gemini) instantly diagnoses diseases.
-- **Actionable Remedies**: Get immediate cure suggestions and prevention tips.
-- **Offline Capability**: Uses a local Python model for crop identification to reduce API costs.
+## System Architecture
+The platform is built on a robust client-server architecture:
+*   **Frontend:** Next.js 15, React, Vanilla CSS Modules
+*   **Backend:** Node.js, Express.js
+*   **Database:** MongoDB Atlas
+*   **AI/ML Models:** Local Python/TensorFlow (EfficientNetB0) & Cloud Google Gemini 2.5
 
-### 🚜 AI Yield & Multi-Cropping
-- **Smart Yield Calculator**: Estimate income potential based on your specific land area and location.
-- **Multi-Cropping Plans**: Get scientific, multi-layer cropping strategies (Canopy, Mid, Ground, Root layers) to maximize land efficiency.
+*(A visual representation is available in `architecture.png`)*
 
-### 📚 Interactive Learning Modules
-- **Detailed Syllabi**: Comprehensive guides for major crops like Rice, Wheat, Maize, and more.
-- **Stage-based Learning**: Modules are broken down into logical stages (e.g., Nursery Preparation, Transplanting, Harvesting).
-- **Progress Tracking**: Your learning progress is saved automatically.
+## Getting Started
+Please refer to `setup_instructions.md` for detailed steps on how to install, configure, and run this project locally.
 
-### 🌦️ Live Weather Dashboard
-- **Real-time Data**: Current temperature, humidity, and forecast fetched via OpenWeatherMap.
-
-### 🔐 Secure Authentication
-- **Biometric Login**: Secure, passwordless login using WebAuthn (Passkeys/FaceID).
-
-## 🏗️ Backend System Architecture
-
-The backend is a **Hybrid AI System** that orchestrates three powerful engines:
-
-1.  **The Manager (Node.js/Express)**: Handles API requests, security, and database interactions.
-2.  **The Specialist (Python/TensorFlow)**: Runs a custom Deep Learning (CNN) model locally to identify crop types from images.
-3.  **The Genius (Google Gemini)**: provides complex reasoning, diagnosing diseases based on the Specialist's findings and the image.
-
-**Data Flow:**
-User Uploads Image ➡️ Node.js Server ➡️ Python Script (Identifies "Tomato") ➡️ Google Gemini (Diagnoses "Early Blight") ➡️ User receives Result.
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **Framework**: [Next.js 15](https://nextjs.org/) (React)
-- **Styling**: Vanilla CSS Modules (Glassmorphism design)
-- **HTTP Client**: Axios
-
-### Backend
-- **Runtime**: Node.js & Express.js
-- **Database**: MongoDB (Atlas)
-- **Authentication**: JWT & SimpleWebAuthn (Passkeys)
-- **AI Integration**: Google Generative AI SDK (Gemini 2.5)
-- **Machine Learning**: Python 3, TensorFlow, Keras (CNN Architecture)
-- **Process Management**: Node.js Child Process (to spawn Python scripts)
-
-## ⚙️ Installation & Setup
-
-### Prerequisites
-- Node.js (v18+)
-- Python (v3.8+) with TensorFlow installed
-- MongoDB Atlas Account
-- Google Gemini API Key
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Keerthan-28/Design-Project.git
-cd agrilearn
+## Project Structure
+```text
+.
+├── src/                  # Source Code
+│   ├── frontend/         # Next.js Web App
+│   └── backend/          # Node.js API Server & Python ML Scripts
+├── docs/                 # Additional Project Documentation
+├── README.md             # Project Overview
+├── requirements.txt      # Python ML Dependencies
+├── architecture.png      # System Architecture Diagram
+├── demo_video_link.txt   # Link to Project Demonstration
+└── setup_instructions.md # Detailed Setup & Installation Guide
 ```
 
-### 2. Backend Setup
-Navigate to the backend directory and install Node.js dependencies:
-```bash
-cd backend
-npm install
-```
+## Contributing
+Contributions are welcome! Please fork this repository and submit a pull request with your proposed changes.
 
-Install Python dependencies for the AI model:
-```bash
-pip install -r requirements.txt
-```
-
-Create a `.env` file in `backend/` with:
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-GEMINI_API_KEY=your_google_gemini_api_key
-OPENWEATHER_API_KEY=your_openweather_api_key
-RP_ID=localhost
-RP_NAME=AgriLearn
-RP_ORIGIN=http://localhost:3000
-```
-
-Start the backend server:
-```bash
-npm run dev
-```
-
-### 3. Frontend Setup
-Open a new terminal, navigate to the frontend:
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-## 🧠 Model Training (Optional)
-If you want to train your own Crop Identification Model:
-1.  Place images in `backend/dataset/ClassName/image.jpg`.
-2.  Run `python train_model.py`.
-3.  The model will be saved to `backend/models/crop_model.keras`.
-
-## 🤝 Contributing
-Contributions are welcome! Please fork, create a branch, and submit a Pull Request.
-
-## 📄 License
-Distributed under the MIT License.
-
----
-Built with 💚 by Team and the AgriLearn Team.
+## License
+MIT License
