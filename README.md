@@ -19,7 +19,8 @@ The platform is built on a robust client-server architecture:
 *   **Database:** MongoDB Atlas
 *   **AI/ML Models:** Local Python/TensorFlow (EfficientNetB0) & Cloud Google Gemini 2.5
 
-*(A visual representation is available in `architecture.png`)*
+*(A visual representation is available in `<img width="8192" height="2900" alt="architecture png" src="https://github.com/user-attachments/assets/b171fb47-80a0-45d6-bc47-61cf751694a1" />
+`)*
 
 ## Getting Started
 Please refer to `setup_instructions.md` for detailed steps on how to install, configure, and run this project locally.
