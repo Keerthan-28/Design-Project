@@ -7,7 +7,10 @@ const { spawn } = require('child_process');
 const runPythonModel = (imagePath) => {
     return new Promise((resolve, reject) => {
         const scriptPath = path.join(__dirname, '..', 'predict_disease.py');
-        const pythonProcess = spawn('python', [scriptPath, imagePath]);
+        
+        // Try 'python' first, then 'python3' if it fails
+        let pythonCmd = 'python';
+        let pythonProcess = spawn(pythonCmd, [scriptPath, imagePath]);
 
         let dataString = '';
         let errorString = '';
@@ -27,7 +30,10 @@ const runPythonModel = (imagePath) => {
                 return;
             }
             try {
-                const result = JSON.parse(dataString);
+                // Find potential JSON in the output (in case of logs)
+                const jsonMatch = dataString.match(/\{[\s\S]*\}/);
+                const jsonStr = jsonMatch ? jsonMatch[0] : dataString;
+                const result = JSON.parse(jsonStr);
                 resolve(result);
             } catch (e) {
                 console.error("Failed to parse Python output:", dataString);

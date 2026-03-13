@@ -1,6 +1,6 @@
-import YieldCalculator from '@/components/tools/YieldCalculator';
-import PricePrediction from '@/components/tools/PricePrediction';
-import WeatherWidget from '@/components/tools/WeatherWidget';
+import YieldCalculator from '@/components/modules/tools/YieldCalculator';
+import PricePrediction from '@/components/modules/tools/PricePrediction';
+import WeatherWidget from '@/components/modules/tools/WeatherWidget';
 import styles from './page.module.css';
 
 export default function ToolsPage() {

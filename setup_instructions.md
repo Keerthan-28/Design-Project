@@ -38,10 +38,11 @@ npm install
 Inside the `src/backend/` directory, install the required packages for the local Deep Learning model. Ensure you use an environment that supports TensorFlow.
 
 ```bash
-pip install -r ../../requirements.txt
+cd src/backend
+pip install -r requirements.txt
 ```
 
-*(Note: Provide the root-level `requirements.txt` to pip).*
+*(Note: Ensure your Python environment is active before installing).*
 
 ## 4. Frontend Installation (Next.js)
 Open a new terminal session, navigate to the frontend folder, and install the modules:
@@ -71,4 +72,5 @@ npm run dev
 If you wish to re-train the default EfficientNetB0 model:
 1. Place your PlantVillage crop images in `src/backend/dataset/ClassName/image.jpg`.
 2. Run `python train_model.py` from within `src/backend/`.
-3. Ensure the newly saved `.keras` file name matches what `predict_disease.py` expects in `src/backend/models/`.
+3. Ensure the newly saved `.keras` file (e.g., `best_model(1).keras`) is placed in `src/backend/models/`.
+4. Ensure `class_names.json` in `src/backend/` matches the training output.

@@ -30,9 +30,11 @@ Please refer to `setup_instructions.md` for detailed steps on how to install, co
 ├── src/                  # Source Code
 │   ├── frontend/         # Next.js Web App
 │   └── backend/          # Node.js API Server & Python ML Scripts
+│       ├── models/       # Deep Learning Model Files (.keras)
+│       ├── prediction_service.py # Core ML Prediction Class
+│       ├── requirements.txt      # Python ML Dependencies
+│       └── class_names.json      # Disease Mapping Data
 ├── docs/                 # Additional Project Documentation
-├── README.md             # Project Overview
-├── requirements.txt      # Python ML Dependencies
 ├── architecture.png      # System Architecture Diagram
 ├── demo_video_link.txt   # Link to Project Demonstration
 └── setup_instructions.md # Detailed Setup & Installation Guide

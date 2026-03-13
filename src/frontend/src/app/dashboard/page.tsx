@@ -1,6 +1,6 @@
-import WeatherWidget from '@/components/tools/WeatherWidget';
-import PricePrediction from '@/components/tools/PricePrediction';
-import YieldCalculator from '@/components/tools/YieldCalculator';
+import WeatherWidget from '@/components/modules/tools/WeatherWidget';
+import PricePrediction from '@/components/modules/tools/PricePrediction';
+import YieldCalculator from '@/components/modules/tools/YieldCalculator';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';

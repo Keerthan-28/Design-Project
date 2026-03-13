@@ -139,12 +139,28 @@ export default function LearnPage({ params }: { params: Promise<{ id: string }> 
                         <Card key={idx} className={styles.topicCard}>
                             <h3>{topic.title}</h3>
                             <div className={styles.markdown}>
-                                {topic.content.split('\n').map((line, i) => (
-                                    <p key={i} dangerouslySetInnerHTML={{
-                                        __html: line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                            .replace(/\* (.*)/g, '<li>$1</li>') // Simple list support
-                                    }} />
-                                ))}
+                                {topic.content.split('\n\n').map((paragraph, i) => {
+                                    const lines = paragraph.split('\n');
+                                    const firstLine = lines[0];
+
+                                    if (firstLine.startsWith('####')) {
+                                        return (
+                                            <div key={i} className={styles.headingBlock}>
+                                                <h4>{firstLine.replace('#### ', '')}</h4>
+                                                {lines.slice(1).map((line, j) => (
+                                                    <p key={j}>{line}</p>
+                                                ))}
+                                            </div>
+                                        );
+                                    }
+                                    return (
+                                        <div key={i} className={styles.paragraph}>
+                                            {lines.map((line, j) => (
+                                                <p key={j}>{line}</p>
+                                            ))}
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </Card>
                     ))}
