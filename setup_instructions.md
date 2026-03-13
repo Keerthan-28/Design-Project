@@ -4,6 +4,12 @@
 Ensure your development environment meets the following requirements:
 *   **Node.js** (v18.0.0 or higher)
 *   **Python** (v3.8.0 or higher) with pip installed
+# ⚙️ Installation & Setup Instructions
+
+## Prerequisites
+Ensure your development environment meets the following requirements:
+*   **Node.js** (v18.0.0 or higher)
+*   **Python** (v3.8.0 or higher) with pip installed
 *   **MongoDB Atlas** Account (or a local MongoDB instance)
 *   Google Gemini API Key
 *   OpenWeatherMap API Key
@@ -11,7 +17,7 @@ Ensure your development environment meets the following requirements:
 ## 1. Environment Setup
 
 ### Backend (.env)
-Create a `.env` file in the `src/backend/` directory:
+Create a `.env` file in the `backend/` directory:
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
@@ -24,21 +30,21 @@ RP_ORIGIN=http://localhost:3000
 ```
 
 ### Frontend (.env.local)
-Create a `.env.local` file in the `src/frontend/` directory (if needed for public variables).
+Create a `.env.local` file in the `frontend/` directory (if needed for public variables).
 
 ## 2. Backend Installation (Node.js & Express)
 Navigate to the backend folder and install the NPM dependencies:
 
 ```bash
-cd src/backend
+cd backend
 npm install
 ```
 
 ## 3. Python Service Installation (Machine Learning)
-Inside the `src/backend/` directory, install the required packages for the local Deep Learning model. Ensure you use an environment that supports TensorFlow.
+Inside the `backend/` directory, install the required packages for the local Deep Learning model. Ensure you use an environment that supports TensorFlow.
 
 ```bash
-cd src/backend
+cd backend
 pip install -r requirements.txt
 ```
 
@@ -48,7 +54,7 @@ pip install -r requirements.txt
 Open a new terminal session, navigate to the frontend folder, and install the modules:
 
 ```bash
-cd src/frontend
+cd frontend
 npm install
 ```
 
@@ -70,7 +76,7 @@ npm run dev
 
 ## 6. Model Training (Optional)
 If you wish to re-train the default EfficientNetB0 model:
-1. Place your PlantVillage crop images in `src/backend/dataset/ClassName/image.jpg`.
-2. Run `python train_model.py` from within `src/backend/`.
-3. Ensure the newly saved `.keras` file (e.g., `best_model(1).keras`) is placed in `src/backend/models/`.
-4. Ensure `class_names.json` in `src/backend/` matches the training output.
+1. Place your PlantVillage crop images in `backend/dataset/ClassName/image.jpg`.
+2. Run `python train_model.py` from within `backend/`.
+3. Ensure the newly saved `.keras` file (e.g., `best_model(1).keras`) is placed in `backend/models/`.
+4. Ensure `class_names.json` in `backend/` matches the training output.
