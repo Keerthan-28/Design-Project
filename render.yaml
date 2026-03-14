@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: virtual-farming-backend
+    env: node
+    plan: starter # TensorFlow needs more than 512MB RAM
+    region: singapore # Choose a region close to you
+    buildCommand: cd backend && npm install && pip install -r requirements.txt
+    startCommand: cd backend && npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false # Provide this in Render dashboard
+      - key: JWT_SECRET
+        sync: false # Provide this in Render dashboard
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+    staticPublishNum: 0

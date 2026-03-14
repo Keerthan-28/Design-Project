@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import ModuleCard from '@/components/modules/ModuleCard';
 import { Module } from '@/data/modules';
+import { API_URL } from '@/lib/api';
 import styles from './page.module.css';
 
 type FilterType = 'all' | 'short-term' | 'mid-term' | 'long-term';
@@ -30,7 +31,7 @@ export default function ModulesPage() {
                 const token = localStorage.getItem('token');
                 if (token) {
                     try {
-                        const progressRes = await fetch('http://localhost:5000/api/users/progress', {
+                        const progressRes = await fetch(`${API_URL}/users/progress`, {
                             headers: {
                                 'Authorization': `Bearer ${token}`
                             }

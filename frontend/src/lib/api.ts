@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+export const API_URL = `${API_BASE_URL}/api`;
+
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api', // Proxy to backend
+    baseURL: API_URL, // Proxy to backend
     headers: {
         'Content-Type': 'application/json',
     },

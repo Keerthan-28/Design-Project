@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Layers, ArrowRight, CircleDollarSign, Calendar, MapPin, Mountain, Sprout, TreePine, Leaf, X, Loader2, RotateCcw, Droplets, Clock, IndianRupee, Sun } from 'lucide-react';
+import { API_URL } from '@/lib/api';
 import styles from './page.module.css';
 
 interface LayerData {
@@ -92,7 +93,7 @@ export default function MultiCroppingPage() {
         setPageState('loading');
 
         try {
-            const res = await fetch('http://localhost:5000/api/ai/multi-crop', {
+            const res = await fetch(`${API_URL}/ai/multi-crop`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ acres: num, location: location.trim(), soilType }),

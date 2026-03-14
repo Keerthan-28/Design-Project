@@ -8,7 +8,9 @@ import {
 } from 'lucide-react';
 import styles from './page.module.css';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+import { API_URL, API_BASE_URL } from '@/lib/api';
+
+const API_BASE = API_URL;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -317,7 +319,7 @@ function PostCard({
         }
     };
 
-    const IMAGE_BASE = 'http://localhost:5000';
+    const IMAGE_BASE = API_BASE_URL;
 
     return (
         <div className={styles.postCard}>

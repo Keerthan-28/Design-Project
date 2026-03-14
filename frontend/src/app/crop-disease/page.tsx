@@ -4,6 +4,8 @@ import { useState } from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 
+import { API_URL } from '@/lib/api';
+
 interface AnalysisResult {
     crop: string;
     status: 'Healthy' | 'Diseased';
@@ -60,7 +62,7 @@ export default function CropDiseasePage() {
         formData.append('image', selectedFile);
 
         try {
-            const response = await fetch('http://localhost:5000/api/disease/detect', {
+            const response = await fetch(`${API_URL}/disease/detect`, {
                 method: 'POST',
                 body: formData,
             });
